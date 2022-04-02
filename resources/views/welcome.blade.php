@@ -78,8 +78,6 @@
                                     <li>Appointment List</li>
                                     <li>Create Appointment</li>
                                     <li>Edit Appointment</li>
-                                    <li>View Appointment</li>
-                                    <li>Delete Appointment</li>
                                 </ul>
                             </div>
                         </div>
