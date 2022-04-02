@@ -1,0 +1,103 @@
+{
+	"info": {
+		"_postman_id": "e3f28953-3475-4e5a-baa3-d2403bdb5d1c",
+		"name": "LikeU-Api DFYA",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Appointments",
+			"item": [
+				{
+					"name": "Get Appointment List as Array",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTY0ODg1NTk2NiwiZXhwIjoxNjUxNDQ3OTY2LCJuYmYiOjE2NDg4NTU5NjYsImp0aSI6ImVpN2ZwWDBpSUM3cnU4WFAiLCJzdWIiOiIxIiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.j1Ob59ttX7qjR7TzNk5IkoLU8l5Swc2CV9cXQ1YAXvE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/appointments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"appointments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create New Appointment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTY0ODg1NTk2NiwiZXhwIjoxNjUxNDQ3OTY2LCJuYmYiOjE2NDg4NTU5NjYsImp0aSI6ImVpN2ZwWDBpSUM3cnU4WFAiLCJzdWIiOiIxIiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.j1Ob59ttX7qjR7TzNk5IkoLU8l5Swc2CV9cXQ1YAXvE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*",
+								"type": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"asunto\": \"Desarrollo de Modulo 1\",\n  \"fecha_hora\": \"2022-05-06 14:05:00\",\n  \"state_id\": 1,\n  \"client_id\": 1\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/appointments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"appointments"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Clients",
+			"item": []
+		},
+		{
+			"name": "Authentication",
+			"item": []
+		}
+	]
+}

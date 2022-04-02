@@ -1,0 +1,570 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Prueba Tecnica CRUD Laravel API Documentation - Para LIKEU",
+        "description": "LikeU API Documentation - Prueba CRUD Laravel",
+        "contact": {
+            "email": "diegoyamaa@gmail.com"
+        },
+        "license": {
+            "name": "GPL2",
+            "url": "https://itdyaingenieria.com"
+        },
+        "version": "1.1.0"
+    },
+    "paths": {
+        "/api/appointments": {
+            "get": {
+                "tags": [
+                    "Appointments"
+                ],
+                "summary": "Get Appointment List",
+                "description": "Get Appointment List as Array",
+                "operationId": "a5318dd1ab82e1557447ac40374db8b9",
+                "responses": {
+                    "200": {
+                        "description": "Get Appointment List as Array"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Appointments"
+                ],
+                "summary": "Create New Appointment",
+                "description": "Create New Appointment",
+                "operationId": "store2",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "asunto": {
+                                        "type": "string",
+                                        "example": "Desarrollo de Modulo 1"
+                                    },
+                                    "fecha_hora": {
+                                        "type": "string",
+                                        "example": "2022-05-06 14:05:00"
+                                    },
+                                    "state_id": {
+                                        "description": "1. Programada 2. Realizada 3. Cancelada 4. No Asistida",
+                                        "type": "integer",
+                                        "example": 1
+                                    },
+                                    "client_id": {
+                                        "type": "integer",
+                                        "example": "1"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Create New Appointment"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                }
+            }
+        },
+        "/api/appointments/{id}": {
+            "put": {
+                "tags": [
+                    "Appointments"
+                ],
+                "summary": "Update Appointment",
+                "description": "Update Appointment. Only can update appointment in state PROGRAMADA",
+                "operationId": "update2",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id, eg; 1",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "asunto": {
+                                        "type": "string",
+                                        "example": "Desarrollo de Modulo 1"
+                                    },
+                                    "fecha_hora": {
+                                        "type": "string",
+                                        "example": "2022-05-06 14:05:00"
+                                    },
+                                    "state_id": {
+                                        "description": "1. Programada 2. Realizada 3. Cancelada 4. No Asistida",
+                                        "type": "integer",
+                                        "example": 2
+                                    },
+                                    "client_id": {
+                                        "type": "integer",
+                                        "example": "1"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Update Client"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                }
+            }
+        },
+        "/api/auth/login": {
+            "post": {
+                "tags": [
+                    "Authentication"
+                ],
+                "summary": "Login",
+                "description": "Login",
+                "operationId": "535ffeda4b78916efd658b2844ea897a",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "email": {
+                                        "type": "string",
+                                        "example": "admin@itdyaingenieria.com"
+                                    },
+                                    "password": {
+                                        "type": "string",
+                                        "example": "123456"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Login"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                }
+            }
+        },
+        "/api/auth/register": {
+            "post": {
+                "tags": [
+                    "Authentication"
+                ],
+                "summary": "Register User",
+                "description": "Register New User",
+                "operationId": "da8643013c2941f5ed7f8a9c9b4a7f7a",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "name": {
+                                        "type": "string",
+                                        "example": "Ariana Abigail"
+                                    },
+                                    "email": {
+                                        "type": "string",
+                                        "example": "ariannabigail@itdyaingenieria.com"
+                                    },
+                                    "password": {
+                                        "type": "string",
+                                        "example": "999999"
+                                    },
+                                    "password_confirmation": {
+                                        "type": "string",
+                                        "example": "999999"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Register New User Data"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                }
+            }
+        },
+        "/api/auth/me": {
+            "get": {
+                "tags": [
+                    "Authentication"
+                ],
+                "summary": "Authenticated User Profile",
+                "description": "Authenticated User Profile",
+                "operationId": "1537d2a532022d0974e4cd2d83c6a38f",
+                "responses": {
+                    "200": {
+                        "description": "Authenticated User Profile"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                }
+            }
+        },
+        "/api/auth/logout": {
+            "post": {
+                "tags": [
+                    "Authentication"
+                ],
+                "summary": "Logout",
+                "description": "Logout",
+                "operationId": "46f8a14c8083abb69eed72768aa08629",
+                "responses": {
+                    "200": {
+                        "description": "Logout"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                }
+            }
+        },
+        "/api/auth/refresh": {
+            "post": {
+                "tags": [
+                    "Authentication"
+                ],
+                "summary": "Refresh",
+                "description": "Refresh",
+                "operationId": "f3538b6e9c46bcf601a9d194288b03d4",
+                "responses": {
+                    "200": {
+                        "description": "Refresh"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                }
+            }
+        },
+        "/api/clients": {
+            "get": {
+                "tags": [
+                    "Clients"
+                ],
+                "summary": "Get Client List",
+                "description": "Get Client List as Array",
+                "operationId": "index",
+                "responses": {
+                    "200": {
+                        "description": "Get Client List as Array"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Clients"
+                ],
+                "summary": "Create New Client",
+                "description": "Create New Client",
+                "operationId": "store",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "nombre": {
+                                        "type": "string",
+                                        "example": "Client Name 1"
+                                    },
+                                    "cedula": {
+                                        "type": "integer",
+                                        "example": 27255425
+                                    },
+                                    "fecha_nacimiento": {
+                                        "type": "string",
+                                        "format": "date",
+                                        "example": "1979-10-31"
+                                    },
+                                    "user_id": {
+                                        "type": "integer",
+                                        "example": 1
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Create New Client"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                }
+            }
+        },
+        "/api/clients/view/all": {
+            "get": {
+                "tags": [
+                    "Clients"
+                ],
+                "summary": "All Clients - Publicly Accessible",
+                "description": "All Clients - Publicly Accessible",
+                "operationId": "indexAll",
+                "parameters": [
+                    {
+                        "name": "perPage",
+                        "in": "query",
+                        "description": "perPage, eg; 20",
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "example": 20
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "All Clients - Publicly Accessible"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                }
+            }
+        },
+        "/api/clients/view/search": {
+            "get": {
+                "tags": [
+                    "Clients"
+                ],
+                "summary": "All Clients - Publicly Accessible",
+                "description": "All Clients - Publicly Accessible",
+                "operationId": "search",
+                "parameters": [
+                    {
+                        "name": "perPage",
+                        "in": "query",
+                        "description": "perPage, eg; 20",
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "example": 20
+                    },
+                    {
+                        "name": "search",
+                        "in": "query",
+                        "description": "search, eg; Test",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "Test"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "All Clients - Publicly Accessible"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                }
+            }
+        },
+        "/api/clients/{id}": {
+            "get": {
+                "tags": [
+                    "Clients"
+                ],
+                "summary": "Show Client Details",
+                "description": "Show Client Details",
+                "operationId": "show",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id, eg; 1",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Show Client Details"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Clients"
+                ],
+                "summary": "Update Client",
+                "description": "Update Client",
+                "operationId": "update",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id, eg; 1",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "nombre": {
+                                        "type": "string",
+                                        "example": "Client 1"
+                                    },
+                                    "cedula": {
+                                        "type": "integer",
+                                        "example": 1085412541
+                                    },
+                                    "fecha_nacimiento": {
+                                        "type": "string",
+                                        "format": "date",
+                                        "example": "2022-12-24"
+                                    },
+                                    "user_id": {
+                                        "type": "integer",
+                                        "example": 1
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Update Client"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Clients"
+                ],
+                "summary": "Delete Client",
+                "description": "Delete Client",
+                "operationId": "destroy",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id, eg; 1",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Delete Client"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "securitySchemes": {
+            "Bearer": {
+                "type": "apiKey",
+                "description": "JWT",
+                "name": "Authorization",
+                "in": "header"
+            }
+        }
+    },
+    "security": [
+        []
+    ]
+}
